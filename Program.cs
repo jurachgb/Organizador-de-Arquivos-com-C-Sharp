@@ -20,8 +20,8 @@ class FileTool
             Console.WriteLine("Deletar arquivos\t\t Pressione 5");
             Console.WriteLine("Renomear arquivos\t\t Pressione 6");
             
-            Console.WriteLine("Sair\t\t\t\t Pressione 10");
-            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,10);
+            Console.WriteLine("Sair\t\t\t\t Pressione 7");
+            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,7);
             switch (resposta)
             {
                 case 1:
@@ -52,7 +52,9 @@ class FileTool
                     string novoNomeArquivo = Console.ReadLine()??"";
                     Helper.RenomearArquivos(pasta,nomeArquivoRenomear,novoNomeArquivo);
                     break;
-                    
+                case 7:
+                    fim = true;
+                    break;
                 default:
                     Console.WriteLine("Opção inválida.");
                     fim = true;
@@ -60,13 +62,5 @@ class FileTool
             }
         }
     }
-    
-    
-    
-    /*
-    static void (string[] args)
-    {
-        string pasta = @"C:\Users\Public\Documents";
-        Helper.ListarArquivos(pasta);
-    }*/
+  
 }
