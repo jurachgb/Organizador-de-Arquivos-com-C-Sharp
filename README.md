@@ -64,13 +64,6 @@ Observação: Atualmente, a busca usa o parâmetro `nomeArquivo` diretamente com
 - Program.cs — aplicação de console com menu de interação
 - Organizador/Helpers.cs — funções utilitárias para manipulação de arquivos
 
-## Melhoria sugeridas
-
-- Adicionar confirmação antes de deletar/renomear arquivos
-- Permitir renomeação com padrões (por exemplo, acrescentar sufixos, numerar arquivos)
-- Tratar exceções (permissões, caminhos inválidos, arquivos em uso)
-- Validar entrada do usuário para padrões de busca (wildcards)
-- Adicionar testes unitários
 
 ## Contribuições
 
@@ -81,13 +74,3 @@ Pull requests são bem-vindos. Para contribuições:
 3. Faça commits claros e descritivos
 4. Abra um Pull Request descrevendo a mudança
 
-## Licença
-
-Coloque aqui a licença desejada (por exemplo, MIT) ou remova esta seção se não aplicar.
-
----
-
-Se quiser, posso:
-- adicionar exemplos de uso mais detalhados,
-- proteger operações destrutivas com confirmações extra,
-- ou abrir um PR com mudanças sugeridas.
