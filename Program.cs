@@ -19,9 +19,9 @@ class FileTool
             Console.WriteLine("Buscar arquivos\t\t\t Pressione 4");
             Console.WriteLine("Deletar arquivos\t\t Pressione 5");
             Console.WriteLine("Renomear arquivos\t\t Pressione 6");
-            
-            Console.WriteLine("Sair\t\t\t\t Pressione 7");
-            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,7);
+            Console.WriteLine("Converter arquivos\t\t Pressione 7");
+            Console.WriteLine("Sair\t\t\t\t Pressione 8");
+            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,8);
             switch (resposta)
             {
                 case 1:
@@ -53,7 +53,14 @@ class FileTool
                     Helper.RenomearArquivos(pasta,nomeArquivoRenomear,novoNomeArquivo);
                     break;
                 case 7:
-                    fim = true;
+                    Console.WriteLine("Digite o nome do arquivo que deseja converter:");
+                    string ArquivoInicial=Console.ReadLine()??"";
+                    Console.WriteLine("Digite o novo formato do arquivo:");
+                    string ArquivoFinal=Console.ReadLine()??"";
+                    Helper.Conversor(pasta,ArquivoInicial,ArquivoFinal);
+                    break;
+                case 8:
+                    fim= true;
                     break;
                 default:
                     Console.WriteLine("Opção inválida.");
