@@ -110,7 +110,7 @@ public class Helper
     }
 
     //Converte o arquivo para outro formato
-    public static void Conversor (string pasta,string nomeArquivo, string NovoFormato)
+    public static void Conversor(string pasta,string nomeArquivo, string NovoFormato)
     {
         var busca=Directory.GetFiles(pasta,nomeArquivo,SearchOption.AllDirectories);
         foreach(string arquivo in busca)
