@@ -55,7 +55,8 @@ Ao executar, você verá um menu com opções numeradas (1 a 7). Exemplos de uso
 - Pressione 4 para buscar arquivos (informe o nome ou um padrão exato).
 - Pressione 5 para deletar arquivos (confirme o nome exatamente como busca).
 - Pressione 6 para renomear arquivos encontrados (informe o novo nome).
-- Pressione 7 para sair.
+- Pressione 7 para converter arquivos (informe o nome e novo formato).
+- Pressione 8 para sair.
 
 Observação: Atualmente, a busca usa o parâmetro `nomeArquivo` diretamente com Directory.GetFiles — isso significa que é possível usar curingas (por exemplo: `*.txt`) para corresponder a vários arquivos.
 
