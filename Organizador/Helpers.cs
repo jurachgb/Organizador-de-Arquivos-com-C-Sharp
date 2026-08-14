@@ -35,7 +35,7 @@ public class Helper
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(arquivo);
         }
-        Console.ResetColor();
+        Console.ForegroundColor=ConsoleColor.White;
 
     }
 
@@ -50,28 +50,27 @@ public class Helper
             FileInfo info = new FileInfo(arquivo);
             Console.WriteLine($"{arquivo} - {info.Length} bytes");
         }
-        Console.ResetColor();
+        Console.ForegroundColor=ConsoleColor.White;
     }
 
-
-
-
-    //Busca arquivos dentro da pasta e subpastas
+    //Busca arquivos dentro da pasta 
     public static void BuscarArquivos(string pasta, string nomeArquivo)
     {
         var busca = Directory.GetFiles(pasta, nomeArquivo, SearchOption.AllDirectories);
         foreach (string arquivo in busca)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Encomtramos o arquivo: {arquivo}");
+            Console.WriteLine($"Encontramos o arquivo: {arquivo}");
         }
         if(busca.Length==0||busca==null)
         {
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum arquivo encontrado.");
         }
-        Console.ResetColor();
+        Console.ForegroundColor=ConsoleColor.White;
     }
+    
+    //Deleta o arquivo
     public static void DeletarArquivos(string pasta, string nomeArquivo)
     {
         var busca = Directory.GetFiles(pasta, nomeArquivo, SearchOption.AllDirectories);
@@ -83,27 +82,52 @@ public class Helper
         }
         if(busca.Length==0||busca==null)
         {
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum arquivo encontrado para deletar.");
         }
-        Console.ResetColor();
+        Console.ForegroundColor=ConsoleColor.White;
     }
 
+    //Renomeia o arquivo
     public static void RenomearArquivos(string pasta, string nomeArquivo, string novoNome)
     {
         var busca = Directory.GetFiles(pasta, nomeArquivo, SearchOption.AllDirectories);
         foreach (string arquivo in busca)
         {
             Console.ForegroundColor = ConsoleColor.Green;
+            string extensão=Path.GetExtension(arquivo)??"";
+            novoNome+=extensão;
             string novoCaminho = Path.Combine(Path.GetDirectoryName(arquivo) ?? "", novoNome);
             File.Move(arquivo, novoCaminho);
             Console.WriteLine($"Arquivo renomeado: {arquivo} para {novoCaminho}");
         }
         if(busca.Length==0||busca==null)
-        {
+        {   
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Nenhum arquivo encontrado para renomear.");
         }
-        Console.ResetColor();
+        Console.ForegroundColor = ConsoleColor.White;
     }
+
+    //Converte o arquivo para outro formato
+    public static void Conversor (string pasta,string nomeArquivo, string NovoFormato)
+    {
+        var busca=Directory.GetFiles(pasta,nomeArquivo,SearchOption.AllDirectories);
+        foreach(string arquivo in busca)
+        {
+            Console.ForegroundColor=ConsoleColor.Green;
+            string novo=Path.ChangeExtension(arquivo,NovoFormato);
+            File.Move(arquivo,novo);
+            Console.WriteLine($"Arquivo convertido: {arquivo} para {novo}");
+        }
+        Console.ForegroundColor=ConsoleColor.White;
+        if(busca.Length==0||busca==null)
+        {
+            Console.ForegroundColor=ConsoleColor.Red;
+            Console.WriteLine("Nenhum arquivo encontrado para converter.");
+        }
+        Console.ForegroundColor=ConsoleColor.White;
+    }   
     
 }
 
