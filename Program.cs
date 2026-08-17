@@ -17,11 +17,12 @@ class FileTool
             Console.WriteLine("Listar arquivos\t\t\t Pressione 2");
             Console.WriteLine("Mostrar tamanho dos arquivos\t Pressione 3");
             Console.WriteLine("Buscar arquivos\t\t\t Pressione 4");
-            Console.WriteLine("Deletar arquivos\t\t Pressione 5");
-            Console.WriteLine("Renomear arquivos\t\t Pressione 6");
-            Console.WriteLine("Converter arquivos\t\t Pressione 7");
-            Console.WriteLine("Sair\t\t\t\t Pressione 8");
-            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,8);
+            Console.WriteLine("Criar arquivos\t\t\t Pressione 5");
+            Console.WriteLine("Deletar arquivos\t\t Pressione 6");
+            Console.WriteLine("Renomear arquivos\t\t Pressione 7");
+            Console.WriteLine("Converter arquivos\t\t Pressione 8");
+            Console.WriteLine("Sair\t\t\t\t Pressione 9");
+            int resposta=Helper.CorretoInt(Console.ReadLine()??"",1,9);
             switch (resposta)
             {
                 case 1:
@@ -39,27 +40,36 @@ class FileTool
                     Console.WriteLine("Digite o nome do arquivo que deseja buscar:");
                     string nomeArquivo = Console.ReadLine()??"";
                     Helper.BuscarArquivos(pasta,nomeArquivo);
+                
                     break;
                 case 5:
+                    Console.WriteLine("Digite o nome do arquivo que deseja criar:");
+                    string nomeArquivoCriar = Console.ReadLine()??"";
+                    Console.WriteLine("Digite o conteúdo do arquivo (opcional):");
+                    string conteudoArquivo = Console.ReadLine()??"";
+                    Helper.CriarArquivos(pasta,nomeArquivoCriar,conteudoArquivo);
+                    break;
+                case 6:
                     Console.WriteLine("Digite o nome do arquivo que deseja deletar:");
                     string nomeArquivoDeletar = Console.ReadLine()??"";
                     Helper.DeletarArquivos(pasta,nomeArquivoDeletar);
                     break;
-                case 6:
+                
+                case 7:
                     Console.WriteLine("Digite o nome do arquivo que deseja renomear:");
                     string nomeArquivoRenomear = Console.ReadLine()??"";
                     Console.WriteLine("Digite o novo nome do arquivo:");
                     string novoNomeArquivo = Console.ReadLine()??"";
                     Helper.RenomearArquivos(pasta,nomeArquivoRenomear,novoNomeArquivo);
                     break;
-                case 7:
+                case 8:
                     Console.WriteLine("Digite o nome do arquivo que deseja converter:");
                     string ArquivoInicial=Console.ReadLine()??"";
                     Console.WriteLine("Digite o novo formato do arquivo:");
                     string ArquivoFinal=Console.ReadLine()??"";
                     Helper.Conversor(pasta,ArquivoInicial,ArquivoFinal);
                     break;
-                case 8:
+                case 9:
                     fim= true;
                     break;
                 default:
