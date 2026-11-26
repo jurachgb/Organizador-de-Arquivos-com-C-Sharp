@@ -1,5 +1,7 @@
 # Organizador de Arquivos com C#
 
+### Bug temporario na Conversão de Arquivos
+
 Um projeto simples em C# para explorar operações com arquivos e pastas no sistema (listar, obter tamanho, buscar, deletar e renomear arquivos). É uma aplicação de console educativa destinada a demonstrar o uso das APIs de System.IO.
 
 ## Funcionalidades
